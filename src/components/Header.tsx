@@ -59,10 +59,8 @@ export function Header() {
         ))}
       </div>
 
-      {/* time count down */}
-      <div className="bg-white">
-        <ModeToggle />
-      </div>
+      {/* toggle dark/light mode */}
+      <ModeToggle />
     </nav>
   );
 }
