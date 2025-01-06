@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-black antialiased dark:bg-white`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-black px-[140px] antialiased dark:bg-white`}
       >
         <ThemeProviderConfig
           attribute="class"
@@ -38,7 +38,8 @@ export default function RootLayout({
         >
           <Header />
           <MobileHeader />
-          {children}
+
+          <main>{children}</main>
         </ThemeProviderConfig>
       </body>
     </html>
