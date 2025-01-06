@@ -3,5 +3,5 @@ import Image from "next/image";
 
 // Home Page ("/")
 export default function Home() {
-  return <>hiahih</>;
+  return <div className="min-h-[200vh]">hiahih</div>;
 }

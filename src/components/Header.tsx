@@ -32,19 +32,40 @@ const headerData = [
 export function Header() {
   const pathname = usePathname();
   const [currentPath, setCurrentPath] = useState("");
+  const [scrolled, setScrolled] = useState(false);
 
+  // Cập nhật currentPath khi pathname thay đổi
   useEffect(() => {
     setCurrentPath(pathname);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // scroll y direction > 50px
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="flex items-center justify-between px-4 xl:px-8 xl:py-4">
-      <h1 className={`${garamond.className} text-[32px] font-bold text-white`}>
-        K
-      </h1>
+    <nav
+      className={`fixed left-0 right-0 z-50 flex items-center justify-between scroll-smooth px-4 duration-300 ${
+        scrolled ? "top-1 shadow-lg transition-all" : "top-4"
+      } xl:px-8`}
+    >
+      <h1 className="text-[32px] font-bold text-white">K</h1>
 
       {/* home, about, skills, exp */}
-      <div className="border-headerBorder flex h-[44px] w-auto items-center rounded-2xl border">
+      <div className="border-headerBorder hidden h-[44px] w-auto items-center rounded-2xl border xl:flex">
         {headerData.map((header, index) => (
           <Link
             href={header.path}
