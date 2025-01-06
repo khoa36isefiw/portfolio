@@ -59,9 +59,7 @@ export function Header() {
   return (
     <>
       <nav
-        className={`fixed left-0 right-0 top-[16px] flex items-center justify-between scroll-smooth xl:px-[140px] ${
-          scrolled ? "top-1 shadow-lg transition-all" : "top-4"
-        } bg-gradient-to-b from-[#0a0a0a] to-[#00000] backdrop-blur-sm xl:px-8`}
+        className={`fixed left-0 right-0 flex items-center justify-between scroll-smooth bg-gradient-to-b from-[#0a0a0a] to-[#00000] px-[20px] backdrop-blur-sm md:px-[70px] lg:px-[100px] xl:px-[140px]`}
       >
         <Link
           href="/"
