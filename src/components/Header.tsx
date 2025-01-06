@@ -65,7 +65,7 @@ export function Header() {
       <h1 className="text-[32px] font-bold text-white">K</h1>
 
       {/* home, about, skills, exp */}
-      <div className="border-headerBorder hidden h-[44px] w-auto items-center rounded-2xl border xl:flex">
+      <div className="border-headerBorder hidden h-[44px] w-auto items-center rounded-2xl border lg:flex">
         {headerData.map((header, index) => (
           <Link
             href={header.path}
