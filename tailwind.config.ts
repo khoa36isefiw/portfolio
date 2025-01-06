@@ -51,7 +51,8 @@ export default {
 					'5': 'hsl(var(--chart-5))'
 				},
 				headerBg: '#3f3f3f',
-				headerBorder: '#9595954d'
+				headerBorder: '#9595954d',
+				'primary-color': '#ffc86a'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

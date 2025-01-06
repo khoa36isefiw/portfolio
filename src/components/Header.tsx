@@ -39,7 +39,7 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <>
+    <div className="h-[60px] py-2">
       <nav
         className={`fixed left-0 right-0 flex items-center justify-between scroll-smooth bg-gradient-to-b from-[#0a0a0a] to-[#00000] px-[20px] backdrop-blur-sm md:px-[70px] lg:px-[100px] xl:px-[140px]`}
       >
@@ -69,7 +69,6 @@ export function Header() {
         {/* toggle dark/light mode */}
         <ModeToggle />
       </nav>
-      <div className="h-[64px]"></div>
-    </>
+    </div>
   );
 }

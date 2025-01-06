@@ -26,7 +26,7 @@ export function MobileHeader() {
   const pathname = usePathname();
 
   return (
-    <div className="relative flex h-screen items-center justify-center lg:hidden">
+    <div className="relative flex items-center justify-center lg:hidden">
       <nav className="border-headerBorder fixed top-[90vh] flex h-[44px] w-fit items-center justify-center rounded-2xl border bg-[#1a1824] px-2">
         {headerData.map((header, index) => (
           <Link
