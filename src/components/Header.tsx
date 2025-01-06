@@ -62,7 +62,9 @@ export function Header() {
         scrolled ? "top-1 shadow-lg transition-all" : "top-4"
       } xl:px-8`}
     >
-      <h1 className="text-[32px] font-bold text-white">K</h1>
+      <Link href="/" className="text-[32px] font-bold text-white">
+        K
+      </Link>
 
       {/* home, about, skills, exp */}
       <div className="border-headerBorder hidden h-[44px] w-auto items-center rounded-2xl border lg:flex">
