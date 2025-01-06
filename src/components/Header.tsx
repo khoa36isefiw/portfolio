@@ -32,29 +32,11 @@ const headerData = [
 export function Header() {
   const pathname = usePathname();
   const [currentPath, setCurrentPath] = useState("");
-  const [scrolled, setScrolled] = useState(false);
 
   // Cập nhật currentPath khi pathname thay đổi
   useEffect(() => {
     setCurrentPath(pathname);
   }, [pathname]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // scroll y direction > 50px
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>

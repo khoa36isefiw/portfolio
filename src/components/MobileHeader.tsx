@@ -1,13 +1,8 @@
 "use client";
 import { BookMarked, CircleUserRound, House } from "lucide-react";
-import { EB_Garamond } from "next/font/google";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const garamond = EB_Garamond({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const headerData = [
   {
