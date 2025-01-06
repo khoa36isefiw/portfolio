@@ -57,33 +57,39 @@ export function Header() {
   }, []);
 
   return (
-    <nav
-      className={`fixed left-0 right-0 z-50 flex items-center justify-between scroll-smooth px-4 duration-300 ${
-        scrolled ? "top-1 shadow-lg transition-all" : "top-4"
-      } xl:px-8`}
-    >
-      <Link href="/" className="text-[32px] font-bold text-white">
-        K
-      </Link>
+    <>
+      <nav
+        className={`fixed left-0 right-0 top-[16px] flex items-center justify-between scroll-smooth xl:px-8 ${
+          scrolled ? "top-1 shadow-lg transition-all" : "top-4"
+        } xl:px-8`}
+      >
+        <Link
+          href="/"
+          className={`${garamond.className} text-[32px] font-bold text-white`}
+        >
+          K
+        </Link>
 
-      {/* home, about, skills, exp */}
-      <div className="border-headerBorder hidden h-[44px] w-auto items-center rounded-2xl border lg:flex">
-        {headerData.map((header, index) => (
-          <Link
-            href={header.path}
-            className={`${
-              currentPath === header.path && "bg-headerBg border-headerBorder"
-            } hover:border-headerBg mx-[16px] flex w-full items-center rounded-xl border px-[16px] py-[2px] text-[white] hover:cursor-pointer hover:border hover:bg-[#1a1824]`}
-            key={index}
-          >
-            <div className="mr-2">{header.icon}</div>
-            <div>{header.text}</div>
-          </Link>
-        ))}
-      </div>
+        {/* home, about, skills, exp */}
+        <div className="border-headerBorder hidden h-[44px] w-auto items-center rounded-2xl border lg:flex">
+          {headerData.map((header, index) => (
+            <Link
+              href={header.path}
+              className={`${
+                currentPath === header.path && "bg-headerBg border-headerBorder"
+              } hover:border-headerBg mx-[16px] flex w-full items-center rounded-xl border px-[16px] py-[2px] text-[white] hover:cursor-pointer hover:border hover:bg-[#1a1824]`}
+              key={index}
+            >
+              <div className="mr-2">{header.icon}</div>
+              <div>{header.text}</div>
+            </Link>
+          ))}
+        </div>
 
-      {/* toggle dark/light mode */}
-      <ModeToggle />
-    </nav>
+        {/* toggle dark/light mode */}
+        <ModeToggle />
+      </nav>
+      <div className="h-[64px]"></div>
+    </>
   );
 }
