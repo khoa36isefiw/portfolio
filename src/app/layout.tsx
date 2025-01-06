@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { MobileHeader } from "@/components/MobileHeader";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-[#34353a] antialiased dark:bg-white`}
+        className={`${geistSans.variable} ${geistMono.variable} h-[300vh] bg-[#34353a] antialiased dark:bg-white`}
       >
         <ThemeProviderConfig
           attribute="class"
@@ -40,6 +41,8 @@ export default function RootLayout({
           <MobileHeader />
 
           <main>{children}</main>
+
+          <Footer />
         </ThemeProviderConfig>
       </body>
     </html>
