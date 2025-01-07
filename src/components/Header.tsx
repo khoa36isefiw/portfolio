@@ -39,7 +39,7 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <div className="z-50 h-[60px] py-2">
+    <div className="relative z-50 h-[60px] py-2">
       <nav
         className={`fixed left-0 right-0 flex items-center justify-between scroll-smooth bg-gradient-to-b from-[#0a0a0a] to-[#00000] px-[20px] backdrop-blur-sm md:px-[70px] lg:px-[100px] xl:px-[140px]`}
       >
