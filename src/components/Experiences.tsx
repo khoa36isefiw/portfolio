@@ -3,19 +3,26 @@ import Container from "./Container";
 
 function Experiences() {
   return (
-    <Container className="relative mt-[60px] h-screen bg-[#3d3e42]">
+    <Container className="z-1 relative mt-[60px] h-screen bg-[#3d3e42]">
       <h1 className="absolute left-0 top-0 translate-x-[50%] translate-y-[-50%] text-[46px] font-bold text-white">
         Experience
       </h1>
       <div className="h-10" />
 
-      <div className="flex w-fit">
-        <div className="relative flex h-[30px] items-center justify-center bg-[#5d5e61] px-4">
-          2024
-          <div className="absolute -right-[20px] top-0 h-full w-[20px] bg-[#5d5e61] [clip-path:polygon(0%_0%,100%_50%,0%_100%)]"></div>
+      <div>
+        <div className="flex h-fit items-center">
+          <div className="flex w-fit">
+            <div className="relative flex h-[40px] items-center justify-center bg-[#5d5e61] px-4">
+              2024
+              <div className="absolute -right-[20px] top-0 h-full w-[20px] bg-[#5d5e61] [clip-path:polygon(0%_0%,100%_50%,0%_100%)]"></div>
+            </div>
+          </div>
+          {/* <div className="ml-8 flex flex-col items-center"> */}
+          <div className="ml-8 h-5 w-5 rounded-full bg-primary-color drop-shadow-xl"></div>
+          {/* <div className="h-10 w-1 bg-white"></div> */}
+          {/* </div> */}
         </div>
       </div>
-      <div className="h-5 w-5 rounded-full bg-primary-color drop-shadow-xl"></div>
     </Container>
   );
 }

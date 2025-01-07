@@ -39,7 +39,7 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <div className="h-[60px] py-2">
+    <div className="z-50 h-[60px] py-2">
       <nav
         className={`fixed left-0 right-0 flex items-center justify-between scroll-smooth bg-gradient-to-b from-[#0a0a0a] to-[#00000] px-[20px] backdrop-blur-sm md:px-[70px] lg:px-[100px] xl:px-[140px]`}
       >
@@ -51,13 +51,13 @@ export function Header() {
         </Link>
 
         {/* home, about, skills, exp */}
-        <div className="border-headerBorder hidden h-[44px] w-auto items-center rounded-2xl border lg:flex">
+        <div className="hidden h-[44px] w-auto items-center rounded-2xl border border-headerBorder lg:flex">
           {headerData.map((header, index) => (
             <Link
               href={header.path}
               className={`${
-                currentPath === header.path && "bg-headerBg border-headerBorder"
-              } hover:border-headerBg mx-[16px] flex w-full items-center rounded-xl border px-[16px] py-[2px] text-[white] hover:cursor-pointer hover:border hover:bg-[#1a1824]`}
+                currentPath === header.path && "border-headerBorder bg-headerBg"
+              } mx-[16px] flex w-full items-center rounded-xl border px-[16px] py-[2px] text-[white] hover:cursor-pointer hover:border hover:border-headerBg hover:bg-[#1a1824]`}
               key={index}
             >
               <div className="mr-2">{header.icon}</div>
