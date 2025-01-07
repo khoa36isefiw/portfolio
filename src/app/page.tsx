@@ -32,31 +32,29 @@ export default function Home() {
       <Container className="bg-[#191919] py-8">
         <HeadingH1 text={"About"} />
 
-        <div className="flex items-center">
-          <div className="bg-primary-color h-[2px] w-[220px] rounded-sm" />
-          <div className="ml-4 text-[20px]">
-            I am a fourth-year student with a strong passion for web
-            development, particularly{" "}
-            <span className="text-primary-color font-bold">
-              front-end development
-            </span>
-            . I am eager to secure an internship opportunity where I can learn
-            and gain practical experience, and enhance my skills in building
-            user-friendly and visually appealing website interfaces. I am highly
-            motivated to learn and contribute, with the goal of becoming a
-            proficient{" "}
-            <span className="text-primary-color font-bold">
-              front-end developer
-            </span>{" "}
-            in the near future.
-          </div>
+        <div className="bg-primary-color mb-2 h-[2px] w-[100px] rounded-sm" />
+        <div className="ml-4 text-[20px]">
+          I am a fourth-year student with a strong passion for web development,
+          particularly{" "}
+          <span className="text-primary-color font-bold">
+            front-end development
+          </span>
+          . I am eager to secure an internship opportunity where I can learn and
+          gain practical experience, and enhance my skills in building
+          user-friendly and visually appealing website interfaces. I am highly
+          motivated to learn and contribute, with the goal of becoming a
+          proficient{" "}
+          <span className="text-primary-color font-bold">
+            front-end developer
+          </span>{" "}
+          in the near future.
         </div>
       </Container>
 
       {/* My Skills */}
-      <Container>
-        <HeadingH1 text={"My Skill"} />
-        <div className="grid grid-cols-4 gap-4">
+      <Container className="mt-8">
+        <HeadingH1 text={"My Skills"} className="text-center" />
+        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {skils.map((skill, index) => (
             <div
               className="flex h-[280px] flex-col items-center justify-center rounded-xl bg-[#3d3e42] shadow-2xl"
