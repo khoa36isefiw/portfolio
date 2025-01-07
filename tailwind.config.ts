@@ -62,6 +62,10 @@ export default {
 
 
 		},
+		dropShadow: {
+			'xl': '0 0px 8px #ffc86a',
+		}
+
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
