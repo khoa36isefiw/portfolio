@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import Experiences from "@/components/Experiences";
 import HeadingH1 from "@/components/HeadingH1";
 import { Button } from "@/components/ui/button";
 import { skils } from "@/data/skillsData";
@@ -57,7 +58,7 @@ export default function Home() {
         <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {skils.map((skill, index) => (
             <div
-              className="flex h-[280px] flex-col items-center justify-center rounded-xl bg-[#3d3e42] shadow-2xl"
+              className="flex h-[280px] flex-col items-center justify-center rounded-xl bg-[#3d3e42] shadow-2xl hover:cursor-pointer hover:bg-[#f0bf6c]"
               key={index}
             >
               <Image
@@ -73,6 +74,7 @@ export default function Home() {
           ))}
         </div>
       </Container>
+      <Experiences />
     </div>
   );
 }
