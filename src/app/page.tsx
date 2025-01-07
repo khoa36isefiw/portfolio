@@ -1,6 +1,9 @@
 import Container from "@/components/Container";
+import HeadingH1 from "@/components/HeadingH1";
 import { Button } from "@/components/ui/button";
+import { skils } from "@/data/skillsData";
 import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
+import Image from "next/image";
 
 // Home Page ("/")
 export default function Home() {
@@ -27,7 +30,8 @@ export default function Home() {
         </div>
       </div>
       <Container className="bg-[#191919] py-8">
-        <h1 className="text-[46px] font-bold">About</h1>
+        <HeadingH1 text={"About"} />
+
         <div className="flex items-center">
           <div className="bg-primary-color h-[2px] w-[220px] rounded-sm" />
           <div className="ml-4 text-[20px]">
@@ -46,6 +50,29 @@ export default function Home() {
             </span>{" "}
             in the near future.
           </div>
+        </div>
+      </Container>
+
+      {/* My Skills */}
+      <Container>
+        <HeadingH1 text={"My Skill"} />
+        <div className="grid grid-cols-4 gap-4">
+          {skils.map((skill, index) => (
+            <div
+              className="flex h-[280px] flex-col items-center justify-center rounded-xl bg-[#3d3e42] shadow-2xl"
+              key={index}
+            >
+              <Image
+                src={skill.image}
+                alt={skill.text}
+                quality={100}
+                width={80}
+                height={80}
+                className="mb-4 h-[80px] w-[80px] object-contain"
+              />
+              <p className="mt-8 text-[24px] font-semibold">{skill.text}</p>
+            </div>
+          ))}
         </div>
       </Container>
     </div>
