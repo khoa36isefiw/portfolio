@@ -80,20 +80,12 @@ export const versionControl = [
 
 export const skils = [
   {
-    text: "Github",
-    image: "/images/git.png",
+    text: "Javascript",
+    image: "/images/js.png",
   },
   {
-    text: "Gitlab",
-    image: "/images/gitlab.png",
-  },
-  {
-    text: "ReactJS",
-    image: "/images/react.png",
-  },
-  {
-    text: "NextJS",
-    image: "/images/next.webp",
+    text: "Typescript",
+    image: "/images/ts.png",
   },
   {
     text: "HTML",
@@ -104,6 +96,19 @@ export const skils = [
     image: "/images/css.png",
   },
   {
+    text: "SASS",
+    image: "/images/saas.png",
+  },
+  {
+    text: "ReactJS",
+    image: "/images/react.png",
+  },
+  {
+    text: "NextJS",
+    image: "/images/next.webp",
+  },
+
+  {
     text: "Material UI",
     image: "/images/mui.png",
   },
@@ -111,23 +116,20 @@ export const skils = [
     text: "TailwindCSS",
     image: "/images/tailwind.png",
   },
-  {
-    text: "SASS",
-    image: "/images/saas.png",
-  },
+
   {
     text: "Redux",
     image: "/images/redux.png",
   },
-  {
-    text: "Javascript",
-    image: "/images/js.png",
-  },
-  {
-    text: "Typescript",
-    image: "/images/ts.png",
-  },
 
+  {
+    text: "Github",
+    image: "/images/git.png",
+  },
+  {
+    text: "Gitlab",
+    image: "/images/gitlab.png",
+  },
   {
     text: "MongoDB",
     image: "/images/mongo.png",
