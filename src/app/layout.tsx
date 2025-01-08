@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { MobileHeader } from "@/components/MobileHeader";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,6 +44,17 @@ export default function RootLayout({
           <main>{children}</main>
 
           <Footer />
+          <Toaster
+            toastOptions={{
+              // unstyled: true,
+              classNames: {
+                error: "bg-red-400",
+                success: "text-green-600 ",
+                warning: "text-yellow-400",
+                info: "bg-blue-400",
+              },
+            }}
+          />
         </ThemeProviderConfig>
       </body>
     </html>
