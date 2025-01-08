@@ -52,7 +52,22 @@ export default {
 				},
 				headerBg: '#3f3f3f',
 				headerBorder: '#9595954d',
-				'primary-color': '#ffc86a'
+				'primary-color': '#ffc86a',
+				'warning-msg-text': '#FAAD14',
+				'warning-msg-bg': '#D6B464',
+				'success-msg-text': '#FAAD14',
+				'success-msg-bg': '#39BF2D',
+				'error-msg-bg': '#EC0C0C',
+
+
+
+
+
+				// successBorder: '#18920D',
+				// errorBg: '#F7E4E4',
+				// errorIcon: '#EC0C0C',
+				// warningBg: '#F5EDDA',
+
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
