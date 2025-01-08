@@ -48,9 +48,12 @@ export default function RootLayout({
             toastOptions={{
               // unstyled: true,
               classNames: {
-                error: "bg-red-400",
-                success: "text-green-600 ",
-                warning: "text-yellow-400",
+                error: "bg-error-msg-bg border-error-msg-bg border text-white",
+                success:
+                  "bg-success-msg-bg border-success-msg-bg border text-white",
+                warning:
+                  " bg-warning-msg-bg border-warning-msg-bg border text-white",
+
                 info: "bg-blue-400",
               },
             }}
