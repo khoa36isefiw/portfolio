@@ -27,7 +27,7 @@ export default function Home() {
           <h1 className="text-[24px] lg:text-[64px]">Front-end Developer</h1>
           <Button
             onClick={handleContact}
-            className="mt-8 rounded-md border border-primary-color bg-transparent py-6 text-[20px] font-bold text-primary-color hover:bg-transparent xl:mt-0"
+            className="mt-4 rounded-md border border-primary-color bg-transparent py-6 text-[20px] font-bold text-primary-color hover:bg-transparent xl:mt-0"
           >
             Contact Me
           </Button>

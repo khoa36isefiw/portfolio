@@ -1,8 +1,15 @@
+import clsx from "clsx";
 import React from "react";
 
-function Dots({ number = 6 }: { number?: number }) {
+function Dots({
+  number = 6,
+  className,
+}: {
+  number?: number;
+  className?: string;
+}) {
   return (
-    <div className="grid w-[100px] grid-cols-3 gap-20">
+    <div className={clsx("grid grid-cols-3", className)}>
       {Array(number)
         .fill(null)
         .map((_, index) => (
