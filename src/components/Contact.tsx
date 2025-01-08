@@ -29,7 +29,7 @@ const contactInfor: ContactInfor[] = [
 
 function Contact() {
   const form = useRef<HTMLFormElement | null>(null);
-  const [error, setError] = useState<boolean>(false);
+
   const [formValues, setFormValues] = useState<IForms>({
     to_name: "",
     from_name: "",
@@ -50,7 +50,7 @@ function Contact() {
     e.preventDefault();
     if (!form.current) {
       // check null
-      setError(true);
+
       console.error("Form reference is null");
       return;
     }
@@ -67,7 +67,6 @@ function Contact() {
         )
         .then(
           (result) => {
-            setError(false);
             console.log("result", result);
             // reset form
             // Clear form values after successful submission
@@ -79,7 +78,6 @@ function Contact() {
             toast.success("Email was sent.");
           },
           (error) => {
-            setError(true);
             console.log(error.text);
             toast.error("Something went wrong");
           },
