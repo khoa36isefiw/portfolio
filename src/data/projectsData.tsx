@@ -140,10 +140,10 @@ export const projectsData: IProjectsData[] = [
     technologies: ["Javascript", "ReactJS", "Material-UI."],
   },
   {
-    projectId: 6,
+    projectId: 7,
     projectType: "website",
     projectName: "Portfolio with Next",
-    projectImage: "",
+    projectImage: "áassa",
     desc: "Design portfolio website to introduce myself.",
     //  "Developing a simple travel application UI in React Native with expo router for navigating between different screens of the app.",
     timeStart: "Sep, 2024",
