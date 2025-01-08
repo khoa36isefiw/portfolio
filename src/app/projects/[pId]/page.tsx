@@ -83,8 +83,36 @@ function ProjectDetail() {
           </button>
         </div>
       </div>
+      <div>
+        <ProjectInfo title="Description" content={data?.desc} />
+        <div>
+          <ProjectInfo title="Responsibilities" />
+          <ul className="list-disc">
+            {data?.responsibilities.map((r) => <li className="ml-4">{r}</li>)}
+          </ul>
+        </div>
+
+        <ProjectInfo
+          title="Technologies"
+          content={data?.technologies.join(", ")}
+        />
+      </div>
     </Container>
   );
 }
 
 export default ProjectDetail;
+
+const ProjectInfo = ({
+  title,
+  content,
+}: {
+  title?: string;
+  content?: string | string[] | undefined;
+}) => {
+  return (
+    <div className="flex items-center">
+      <strong className="mr-1">{title}: </strong> {content}
+    </div>
+  );
+};

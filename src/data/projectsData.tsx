@@ -96,7 +96,8 @@ export const projectsData: IProjectsData[] = [
     linkSourceCode: "https://github.com/khoa36isefiw/Thesis-Social-Media-Jobs",
     responsibilities: [
       "Analyze requirements and social media functionality.",
-      "Implementing client-side: posting, chatting, commenting and changing user profiles.Responsiveness for all devices.",
+      "Implementing client-side: posting, chatting, commenting and changing user profiles.",
+      "Responsiveness for all devices.",
       "Researching and using animations.",
       "Responsiveness for all devices.",
       "Deploy website on Vercel",
