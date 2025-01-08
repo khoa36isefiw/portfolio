@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 function Projects() {
   const router = useRouter();
   const handleNavigateToDetail = (projectId: number) => {
-    router.push(`/projects/${projectId}`); // Điều hướng tới trang chi tiết
+    router.push(`/projects/${projectId}`); // navigate to project detail page
   };
 
   return (
@@ -24,13 +24,16 @@ function Projects() {
           >
             {/* Image */}
             <img
-              src={project?.projectImage}
+              src={project?.projectImage[0]}
               alt={project?.projectName}
               className="h-full w-full rounded-lg object-cover transition-transform duration-300"
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:cursor-pointer group-hover:opacity-100">
+            <div
+              onClick={() => handleNavigateToDetail(project?.projectId)}
+              className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:cursor-pointer group-hover:opacity-100"
+            >
               {/* View Detail Button */}
               <h1>hâhiahai</h1>
               <button

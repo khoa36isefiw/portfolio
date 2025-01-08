@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 type Props = {
-  text: string;
+  text?: string;
   className?: string;
 };
 
