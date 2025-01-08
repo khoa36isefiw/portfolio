@@ -2,7 +2,7 @@
 import Container from "@/components/Container";
 import HeadingH1 from "@/components/HeadingH1";
 import { IProjectsData, projectsData } from "@/data/projectsData";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Code, Paperclip } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
@@ -83,7 +83,11 @@ function ProjectDetail() {
           </button>
         </div>
       </div>
-      <div>
+      <div className="mt-4">
+        <ProjectInfo
+          title="Time"
+          content={`${data?.timeStart} - ${data?.timeEnd}`}
+        />
         <ProjectInfo title="Description" content={data?.desc} />
         <div>
           <ProjectInfo title="Responsibilities" />
@@ -96,6 +100,32 @@ function ProjectDetail() {
           title="Technologies"
           content={data?.technologies.join(", ")}
         />
+
+        <a
+          target="_blank"
+          href={data?.linkSourceCode}
+          rel="noopener noreferrer"
+          className="flex items-center hover:underline"
+        >
+          <Code size={18} color="#FAAD14" />
+          <p className="ml-1">
+            <strong className="text-warning-msg-text">Source:</strong>{" "}
+            {data?.linkSourceCode}
+          </p>
+        </a>
+
+        <a
+          target="_blank"
+          href={data?.linkDeployed}
+          rel="noopener noreferrer"
+          className="flex items-center hover:underline"
+        >
+          <Paperclip size={18} color="#FAAD14" />
+          <p className="ml-1">
+            <strong className="text-warning-msg-text">Website:</strong>{" "}
+            {data?.nameLinkDeployed}
+          </p>
+        </a>
       </div>
     </Container>
   );
@@ -111,8 +141,9 @@ const ProjectInfo = ({
   content?: string | string[] | undefined;
 }) => {
   return (
-    <div className="flex items-center">
-      <strong className="mr-1">{title}: </strong> {content}
+    <div className="mb-1 flex items-center">
+      <strong className="text-warning-msg-text mr-1">{title}: </strong>{" "}
+      {content}
     </div>
   );
 };
