@@ -1,7 +1,7 @@
 "use client";
 import Contact from "@/components/Contact";
 import Container from "@/components/Container";
-import Dots from "@/components/Dots";
+
 import Experiences from "@/components/Experience";
 import HeadingH1 from "@/components/HeadingH1";
 import Projects from "@/components/Projects";
@@ -27,7 +27,7 @@ export default function Home() {
           <h1 className="text-[24px] lg:text-[64px]">Front-end Developer</h1>
           <Button
             onClick={handleContact}
-            className="rounded-md border border-primary-color bg-transparent py-6 text-[20px] font-bold text-primary-color hover:bg-transparent"
+            className="mt-8 rounded-md border border-primary-color bg-transparent py-6 text-[20px] font-bold text-primary-color hover:bg-transparent xl:mt-0"
           >
             Contact Me
           </Button>
@@ -45,7 +45,7 @@ export default function Home() {
         <HeadingH1 text={"About"} />
 
         <div className="mb-2 h-[2px] w-[100px] rounded-sm bg-primary-color" />
-        <div className="ml-4 text-[20px]">
+        <div className="ml-4 text-justify text-[20px]">
           I am a fourth-year student with a strong passion for web development,
           particularly{" "}
           <span className="font-bold text-primary-color">
