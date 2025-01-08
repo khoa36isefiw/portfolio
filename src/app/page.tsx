@@ -1,6 +1,7 @@
 "use client";
 import Contact from "@/components/Contact";
 import Container from "@/components/Container";
+import Dots from "@/components/Dots";
 import Experiences from "@/components/Experience";
 import HeadingH1 from "@/components/HeadingH1";
 import Projects from "@/components/Projects";
@@ -68,7 +69,7 @@ export default function Home() {
         <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {skils.map((skill, index) => (
             <div
-              className="flex h-[280px] flex-col items-center justify-center rounded-xl bg-[#3d3e42] shadow-2xl hover:cursor-pointer hover:bg-[#f0bf6c]"
+              className="z-40 flex h-[280px] flex-col items-center justify-center rounded-xl bg-[#3d3e42] shadow-2xl hover:cursor-pointer hover:bg-[#f0bf6c]"
               key={index}
             >
               <Image
@@ -82,6 +83,18 @@ export default function Home() {
               <p className="mt-8 text-[24px] font-semibold">{skill.text}</p>
             </div>
           ))}
+        </div>
+        <div className="flex items-end justify-end">
+          <div className="grid grid-cols-3 gap-10">
+            {Array(6)
+              .fill(null)
+              .map((_, index) => (
+                <div
+                  key={index}
+                  className="m-4 h-5 w-5 rounded-full bg-[#6a5d4a]"
+                ></div>
+              ))}
+          </div>
         </div>
       </Container>
       <Experiences />
