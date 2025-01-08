@@ -1,3 +1,4 @@
+"use client";
 import Contact from "@/components/Contact";
 import Container from "@/components/Container";
 import Experiences from "@/components/Experience";
@@ -7,9 +8,13 @@ import { Button } from "@/components/ui/button";
 import { skils } from "@/data/skillsData";
 import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
 import Image from "next/image";
+import { toast } from "sonner";
 
 // Home Page ("/")
 export default function Home() {
+  const handleContact = () => {
+    toast.success("Email was sent.");
+  };
   return (
     <div>
       <div className="mt-10 flex justify-between px-[20px] text-white shadow-inner md:px-[50px] lg:px-[80px] xl:px-[140px]">
@@ -19,7 +24,10 @@ export default function Home() {
             I am <span className="font-bold text-[#ffc86a]">Khoa</span>
           </h1>
           <h1 className="text-[24px] lg:text-[64px]">Front-end Developer</h1>
-          <Button className="rounded-md border border-primary-color bg-transparent py-6 text-[20px] font-bold text-primary-color hover:bg-transparent">
+          <Button
+            onClick={handleContact}
+            className="rounded-md border border-primary-color bg-transparent py-6 text-[20px] font-bold text-primary-color hover:bg-transparent"
+          >
             Contact Me
           </Button>
         </div>

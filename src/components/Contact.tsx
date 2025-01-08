@@ -1,12 +1,21 @@
 "use client";
-import React, { JSX, useRef } from "react";
+import React, { JSX, useRef, useState } from "react";
 import Container from "./Container";
 import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
-import HeadingH1 from "./HeadingH1";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+
 type ContactInfor = {
   text: string;
   icon: JSX.Element;
 };
+
+interface IForms {
+  to_name: string;
+  from_name: string;
+  message: string;
+}
+
 const contactInfor: ContactInfor[] = [
   {
     text: "0828 545 739",
@@ -19,27 +28,64 @@ const contactInfor: ContactInfor[] = [
 ];
 
 function Contact() {
-  const form = useRef(null);
+  const form = useRef<HTMLFormElement | null>(null);
+  const [error, setError] = useState<boolean>(false);
+  const [formValues, setFormValues] = useState<IForms>({
+    to_name: "",
+    from_name: "",
+    message: "",
+  });
 
-  // const sendEmail = (e:) => {
-  //   e.preventDefault();
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
 
-  //   emailjs
-  //     .sendForm(
-  //       "YOUR_SERVICE_ID",
-  //       "YOUR_TEMPLATE_ID",
-  //       form.current,
-  //       "YOUR_PUBLIC_KEY",
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       },
-  //     );
-  // };
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.current) {
+      // check null
+      setError(true);
+      console.error("Form reference is null");
+      return;
+    }
+
+    if (!formValues.from_name || !formValues.to_name || !formValues.message) {
+      toast.warning("Please fill all these fields.");
+    } else {
+      emailjs
+        .sendForm(
+          "service_akwt4h9",
+          "template_8u12tgt",
+          form.current,
+          "EIpxo4Zin4OTgUwwK",
+        )
+        .then(
+          (result) => {
+            setError(false);
+            console.log("result", result);
+            // reset form
+            // Clear form values after successful submission
+            setFormValues({
+              to_name: "",
+              from_name: "",
+              message: "",
+            });
+            toast.success("Email was sent.");
+          },
+          (error) => {
+            setError(true);
+            console.log(error.text);
+            toast.error("Something went wrong");
+          },
+        );
+    }
+  };
   return (
     <div className="z-1 relative mt-[60px] min-h-[300px] bg-[#3d3e42]">
       <h1 className="relative left-1/2 top-0 translate-x-[-50%] translate-y-[-50%] text-center text-[46px] font-bold text-white before:absolute before:left-0 before:top-1/2 before:h-[3px] before:w-[35%] before:bg-primary-color before:content-[''] after:absolute after:right-0 after:top-1/2 after:h-[3px] after:w-[35%] after:bg-primary-color after:content-['']">
@@ -70,7 +116,11 @@ function Contact() {
           <h2 className="mb-4 text-[24px] font-bold text-primary-color">
             Send me a Message
           </h2>
-          <form ref={form} className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="grid grid-cols-1 gap-6 md:grid-cols-2"
+          >
             {/* Name Input */}
             <div className="col-span-1">
               <label className="text-md block font-bold text-primary-color">
@@ -78,9 +128,10 @@ function Contact() {
               </label>
               <input
                 type="text"
-                name="user_name"
+                name="to_name"
+                value={formValues.to_name}
+                onChange={handleChange}
                 className="mt-2 w-full rounded-md border border-gray-300 p-3 text-black focus:border-primary-color focus:ring-primary-color dark:bg-gray-800 dark:text-white"
-                required
               />
             </div>
 
@@ -91,9 +142,10 @@ function Contact() {
               </label>
               <input
                 type="email"
-                name="user_email"
+                name="from_name"
+                value={formValues.from_name}
+                onChange={handleChange}
                 className="mt-2 w-full rounded-md border border-gray-300 p-3 text-black focus:border-primary-color focus:ring-primary-color dark:bg-gray-800 dark:text-white"
-                required
               />
             </div>
 
@@ -104,9 +156,10 @@ function Contact() {
               </label>
               <textarea
                 name="message"
+                value={formValues.message}
+                onChange={handleChange}
                 rows={4}
                 className="mt-2 w-full rounded-md border border-gray-300 p-3 text-black focus:border-primary-color focus:ring-primary-color dark:bg-gray-800 dark:text-white"
-                required
               />
             </div>
 
