@@ -6,6 +6,7 @@ import HeadingH1 from "./HeadingH1";
 import { projectsData } from "@/data/projectsData";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Eye } from "lucide-react";
 
 function Projects() {
   const router = useRouter();
@@ -27,7 +28,7 @@ function Projects() {
             <Image
               src={project?.projectImage[0]}
               alt={project?.projectName}
-              className="h-full w-full rounded-lg object-cover transition-transform duration-300"
+              className="h-full w-full rounded-lg object-fill transition-transform duration-300"
               quality={100}
               width={256}
               height={256}
@@ -39,12 +40,14 @@ function Projects() {
               className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:cursor-pointer group-hover:opacity-100"
             >
               {/* View Detail Button */}
-              <h1>hâhiahai</h1>
+              <h1 className="text-warning-msg-text text-[18px] font-bold">
+                {project.projectName}
+              </h1>
               <button
                 onClick={() => handleNavigateToDetail(project?.projectId)}
-                className="rounded-md bg-primary-color px-4 py-2 text-white hover:bg-sky-600"
+                className="rounded-md bg-primary-color px-4 py-2 text-white"
               >
-                View Detail
+                <Eye />
               </button>
             </div>
           </div>

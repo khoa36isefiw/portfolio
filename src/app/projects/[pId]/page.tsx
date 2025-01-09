@@ -1,6 +1,7 @@
 "use client";
 import Container from "@/components/Container";
 import HeadingH1 from "@/components/HeadingH1";
+import { ProjectInfo } from "@/components/ProjectInfo";
 import { IProjectsData, projectsData } from "@/data/projectsData";
 import { ChevronLeft, ChevronRight, Code, Paperclip } from "lucide-react";
 import Image from "next/image";
@@ -50,6 +51,7 @@ function ProjectDetail() {
             quality={100}
             width={800}
             height={400}
+            className="h-full max-h-[400px] w-full max-w-[800px]"
           />
         </div>
         <div className="flex items-center">
@@ -68,7 +70,7 @@ function ProjectDetail() {
               quality={100}
               width={80}
               height={80}
-              className={`mr-1 hover:cursor-pointer ${
+              className={`mr-1 h-full max-h-[80px] w-full max-w-[80px] hover:cursor-pointer ${
                 index === imageIndexSelected ? "border-2 border-blue-500" : ""
               }`}
               onClick={() => setImageIndexSelected(index)}
@@ -140,18 +142,3 @@ function ProjectDetail() {
 }
 
 export default ProjectDetail;
-
-const ProjectInfo = ({
-  title,
-  content,
-}: {
-  title?: string;
-  content?: string | string[] | undefined;
-}) => {
-  return (
-    <div className="mb-1 flex items-center text-[18px]">
-      <strong className="text-warning-msg-text mr-1">{title}: </strong>{" "}
-      {content}
-    </div>
-  );
-};
