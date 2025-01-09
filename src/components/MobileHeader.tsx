@@ -27,7 +27,7 @@ export function MobileHeader() {
 
   return (
     <div className="relative z-50 flex items-center justify-center lg:hidden">
-      <nav className="fixed top-[90vh] flex h-[44px] w-fit items-center justify-center rounded-2xl border border-headerBorder bg-[#1a1824] px-2">
+      <nav className="fixed top-[90vh] flex h-[44px] w-fit items-center justify-center rounded-2xl border border-headerBorder bg-[#1a182a4] px-2">
         {headerData.map((header, index) => (
           <Link
             href={header.path}

@@ -83,53 +83,57 @@ function ProjectDetail() {
           </button>
         </div>
       </div>
-      <div className="mt-4">
-        <ProjectInfo
-          title="Time"
-          content={`${data?.timeStart} - ${data?.timeEnd}`}
-        />
-        <ProjectInfo title="Description" content={data?.desc} />
-        <div>
-          <ProjectInfo title="Responsibilities" />
-          <ul className="list-disc">
-            {data?.responsibilities.map((r, index) => (
-              <li key={index} className="ml-4">
-                {r}
-              </li>
-            ))}
-          </ul>
+      <div className="flex flex-col items-center justify-center">
+        <div className="mt-4">
+          <ProjectInfo
+            title="Time"
+            content={`${data?.timeStart} - ${data?.timeEnd}`}
+          />
+          <ProjectInfo title="Description" content={data?.desc} />
+          <div>
+            <ProjectInfo title="Responsibilities" />
+            <ul className="list-disc text-[18px]">
+              {data?.responsibilities.map((r, index) => (
+                <li key={index} className="ml-4">
+                  {r}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <ProjectInfo
+            title="Technologies"
+            content={data?.technologies.join(", ")}
+          />
+
+          <a
+            target="_blank"
+            href={data?.linkSourceCode}
+            rel="noopener noreferrer"
+            className="mb-1 flex items-center text-[18px] hover:underline"
+          >
+            <Code size={18} color="#FAAD14" />
+            <p className="ml-1">
+              <strong className="text-warning-msg-text">Source:</strong>{" "}
+              {data?.linkSourceCode}
+            </p>
+          </a>
+
+          {data?.nameLinkDeployed !== "Not Available" && (
+            <a
+              target="_blank"
+              href={data?.linkDeployed}
+              rel="noopener noreferrer"
+              className="mb-1 flex items-center text-[18px] hover:underline"
+            >
+              <Paperclip size={18} color="#FAAD14" />
+              <p className="ml-1">
+                <strong className="text-warning-msg-text">Website:</strong>{" "}
+                {data?.nameLinkDeployed}
+              </p>
+            </a>
+          )}
         </div>
-
-        <ProjectInfo
-          title="Technologies"
-          content={data?.technologies.join(", ")}
-        />
-
-        <a
-          target="_blank"
-          href={data?.linkSourceCode}
-          rel="noopener noreferrer"
-          className="flex items-center hover:underline"
-        >
-          <Code size={18} color="#FAAD14" />
-          <p className="ml-1">
-            <strong className="text-warning-msg-text">Source:</strong>{" "}
-            {data?.linkSourceCode}
-          </p>
-        </a>
-
-        <a
-          target="_blank"
-          href={data?.linkDeployed}
-          rel="noopener noreferrer"
-          className="flex items-center hover:underline"
-        >
-          <Paperclip size={18} color="#FAAD14" />
-          <p className="ml-1">
-            <strong className="text-warning-msg-text">Website:</strong>{" "}
-            {data?.nameLinkDeployed}
-          </p>
-        </a>
       </div>
     </Container>
   );
@@ -145,7 +149,7 @@ const ProjectInfo = ({
   content?: string | string[] | undefined;
 }) => {
   return (
-    <div className="mb-1 flex items-center">
+    <div className="mb-1 flex items-center text-[18px]">
       <strong className="text-warning-msg-text mr-1">{title}: </strong>{" "}
       {content}
     </div>
