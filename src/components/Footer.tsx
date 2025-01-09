@@ -9,7 +9,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="mt-10 w-full p-4 text-center font-bold text-white">
+    <footer className="sticky top-[100vh] w-full p-4 text-center font-bold text-white">
       <p className="text-[24px]"> &#169; 2025 / Khoa Nek </p>
       <div className="mt-1 flex items-center justify-center md:mt-4">
         <TooltipProvider>
