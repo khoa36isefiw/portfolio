@@ -86,7 +86,7 @@ function Contact() {
   };
   return (
     <div className="z-1 relative mt-[60px] min-h-[300px] bg-[#3d3e42]">
-      <h1 className="relative left-1/2 top-0 translate-x-[-50%] translate-y-[-50%] text-center text-[46px] font-bold text-white before:absolute before:left-0 before:top-1/2 before:h-[3px] before:w-[35%] before:bg-primary-color before:content-[''] after:absolute after:right-0 after:top-1/2 after:h-[3px] after:w-[35%] after:bg-primary-color after:content-['']">
+      <h1 className="relative left-1/2 top-0 translate-x-[-50%] translate-y-[-50%] text-center text-[46px] font-bold text-white before:absolute before:left-0 before:top-1/2 before:h-[3px] before:w-[15%] before:bg-primary-color before:content-[''] after:absolute after:right-0 after:top-1/2 after:h-[3px] after:w-[15%] after:bg-primary-color after:content-[''] md:before:w-[25%] md:after:w-[25%] lg:before:w-[30%] lg:after:w-[30%] xl:before:w-[40%] xl:after:w-[40%]">
         Contact Me
       </h1>
 
@@ -176,10 +176,11 @@ function Contact() {
 
       <div className="absolute bottom-0 left-0 w-full translate-x-0 translate-y-1/2 text-[36px] text-white">
         <div className="relative flex items-center justify-center gap-4">
-          <div className="absolute left-0 top-1/2 h-[3px] w-[40%] -translate-y-1/2 bg-primary-color"></div>
-          <div className="absolute right-0 top-1/2 h-[3px] w-[40%] -translate-y-1/2 bg-primary-color"></div>
+          <div className="absolute left-0 top-1/2 h-[3px] w-[25%] -translate-y-1/2 bg-primary-color md:w-[35%]"></div>
+          <div className="absolute right-0 top-1/2 h-[3px] w-[25%] -translate-y-1/2 bg-primary-color md:w-[35%]"></div>
           <Linkedin />
           <Github />
+
           <PhoneCall />
           <Mail />
         </div>

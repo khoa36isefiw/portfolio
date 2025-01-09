@@ -70,7 +70,7 @@ function ProjectDetail() {
               quality={100}
               width={80}
               height={80}
-              className={`mr-1 h-full max-h-[80px] w-full max-w-[80px] hover:cursor-pointer ${
+              className={`mr-1 h-full max-h-[80px] w-full max-w-[80px] overflow-x-scroll hover:cursor-pointer ${
                 index === imageIndexSelected ? "border-2 border-blue-500" : ""
               }`}
               onClick={() => setImageIndexSelected(index)}

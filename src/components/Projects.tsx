@@ -18,7 +18,7 @@ function Projects() {
     <Container className="my-4">
       <Dots className="w-[100px] gap-20" />
       <HeadingH1 text={"Projects"} className="text-center" />
-      <div className="mt-5 grid grid-cols-4 gap-10">
+      <div className="mt-5 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {projectsData.map((project) => (
           <div
             key={project?.projectId}
