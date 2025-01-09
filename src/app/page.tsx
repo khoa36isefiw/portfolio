@@ -7,6 +7,7 @@ import HeadingH1 from "@/components/HeadingH1";
 import Projects from "@/components/Projects";
 import { Button } from "@/components/ui/button";
 import { skils } from "@/data/skillsData";
+import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import { toast } from "sonner";
@@ -18,16 +19,34 @@ export default function Home() {
   };
   return (
     <div>
-      <div className="mt-10 flex justify-between px-[20px] text-white shadow-inner md:px-[50px] lg:px-[80px] xl:px-[140px]">
+      <motion.div
+        variants={{
+          hidden: {
+            opacity: 0,
+            y: 75,
+          },
+          visible: {
+            opacity: 1,
+            y: 0,
+          },
+        }}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 0.5, deplay: 0.25 }}
+        className="mt-10 flex justify-between px-[20px] text-white shadow-inner md:px-[50px] lg:px-[80px] xl:px-[140px]"
+      >
         <div className="">
           <h1 className="text-[24px] lg:text-[48px]">Hello There,</h1>
+          {/* <h1 className="animate-typing font-bold text-white">Hello World</h1> */}
+
           <h1 className="text-[24px] lg:text-[48px]">
             I am <span className="font-bold text-[#ffc86a]">Khoa</span>
           </h1>
           <h1 className="text-[24px] lg:text-[64px]">Front-end Developer</h1>
+
           <Button
             onClick={handleContact}
-            className="mt-4 rounded-md border border-primary-color bg-transparent py-6 text-[20px] font-bold text-primary-color hover:bg-transparent xl:mt-0"
+            className="mt-4 rounded-md border border-primary-color bg-transparent py-6 text-[20px] font-bold text-primary-color transition-all hover:scale-110 hover:bg-transparent xl:mt-0"
           >
             Contact Me
           </Button>
@@ -40,7 +59,7 @@ export default function Home() {
           <PhoneCall />
           <Mail />
         </div>
-      </div>
+      </motion.div>
       <Container className="bg-[#191919] py-8">
         <HeadingH1 text={"About"} />
 

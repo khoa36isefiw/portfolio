@@ -79,7 +79,24 @@ export default {
 		},
 		dropShadow: {
 			'xl': '0 0px 8px #ffc86a',
-		}
+		},
+
+
+		keyframes: {
+			typing: {
+				"0%": { width: "0%" },
+				"100%": { width: "100%" },
+			},
+			blink: {
+				"50%": { borderColor: "transparent" },
+				"100%": { borderColor: "white" },
+			},
+		},
+		animation: {
+			typing: "typing 2s steps(20, end) infinite alternate",
+			blink: "blink 0.7s step-end infinite",
+		},
+
 
 	},
 	plugins: [require("tailwindcss-animate")],
