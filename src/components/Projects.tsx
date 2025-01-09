@@ -20,7 +20,10 @@ function Projects() {
       <HeadingH1 text={"Projects"} className="text-center" />
       <div className="mt-5 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {projectsData.map((project) => (
-          <div className="group relative aspect-square w-full overflow-hidden rounded-lg">
+          <div
+            className="boder-[#ccc] group relative aspect-square w-full overflow-hidden rounded-lg border shadow-[0_1px_4px_#fff] hover:cursor-pointer"
+            onClick={() => handleNavigateToDetail(project.projectId)}
+          >
             <Image
               src={project.projectImage[0]}
               alt={project.projectName}
@@ -32,7 +35,10 @@ function Projects() {
               <h1 className="text-warning-msg-text text-[18px] font-bold">
                 {project.projectName}
               </h1>
-              <button className="mt-2 rounded-md bg-primary-color px-4 py-2 text-white">
+              <button
+                className="mt-2 rounded-md bg-primary-color px-4 py-2 text-white"
+                onClick={() => handleNavigateToDetail(project.projectId)}
+              >
                 <Eye />
               </button>
             </div>
