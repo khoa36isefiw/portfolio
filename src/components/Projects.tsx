@@ -20,33 +20,19 @@ function Projects() {
       <HeadingH1 text={"Projects"} className="text-center" />
       <div className="mt-5 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {projectsData.map((project) => (
-          <div
-            key={project?.projectId}
-            className="group relative h-64 w-64 overflow-hidden rounded-lg bg-lime-400"
-          >
-            {/* Image */}
+          <div className="group relative aspect-square w-full overflow-hidden rounded-lg">
             <Image
-              src={project?.projectImage[0]}
-              alt={project?.projectName}
-              className="h-full w-full rounded-lg object-fill transition-transform duration-300"
+              src={project.projectImage[0]}
+              alt={project.projectName}
+              className="h-full w-full object-cover transition-transform duration-300"
               quality={100}
-              width={256}
-              height={256}
+              fill
             />
-
-            {/* Overlay */}
-            <div
-              onClick={() => handleNavigateToDetail(project?.projectId)}
-              className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 hover:cursor-pointer group-hover:opacity-100"
-            >
-              {/* View Detail Button */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <h1 className="text-warning-msg-text text-[18px] font-bold">
                 {project.projectName}
               </h1>
-              <button
-                onClick={() => handleNavigateToDetail(project?.projectId)}
-                className="rounded-md bg-primary-color px-4 py-2 text-white"
-              >
+              <button className="mt-2 rounded-md bg-primary-color px-4 py-2 text-white">
                 <Eye />
               </button>
             </div>
