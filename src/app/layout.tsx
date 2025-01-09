@@ -43,7 +43,6 @@ export default function RootLayout({
 
           <main>{children}</main>
 
-          <Footer />
           <Toaster
             toastOptions={{
               // unstyled: true,
@@ -58,6 +57,7 @@ export default function RootLayout({
               },
             }}
           />
+          <Footer />
         </ThemeProviderConfig>
       </body>
     </html>

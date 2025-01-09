@@ -5,6 +5,7 @@ import HeadingH1 from "./HeadingH1";
 
 import { projectsData } from "@/data/projectsData";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 function Projects() {
   const router = useRouter();
@@ -23,10 +24,13 @@ function Projects() {
             className="group relative h-64 w-64 overflow-hidden rounded-lg bg-lime-400"
           >
             {/* Image */}
-            <img
+            <Image
               src={project?.projectImage[0]}
               alt={project?.projectName}
               className="h-full w-full rounded-lg object-cover transition-transform duration-300"
+              quality={100}
+              width={100}
+              height={100}
             />
 
             {/* Overlay */}

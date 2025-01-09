@@ -92,7 +92,11 @@ function ProjectDetail() {
         <div>
           <ProjectInfo title="Responsibilities" />
           <ul className="list-disc">
-            {data?.responsibilities.map((r) => <li className="ml-4">{r}</li>)}
+            {data?.responsibilities.map((r, index) => (
+              <li key={index} className="ml-4">
+                {r}
+              </li>
+            ))}
           </ul>
         </div>
 
