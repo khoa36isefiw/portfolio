@@ -23,6 +23,7 @@ function Projects({ ref }: { ref: React.Ref<HTMLDivElement> }) {
           <div
             className="boder-[#ccc] group relative aspect-square w-full overflow-hidden rounded-lg border shadow-[0_1px_4px_#fff] hover:cursor-pointer"
             onClick={() => handleNavigateToDetail(project.projectId)}
+            key={project.projectId}
           >
             <Image
               src={project.projectImage[0]}
