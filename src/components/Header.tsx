@@ -3,6 +3,7 @@ import { BookMarked, CircleUserRound, FolderGit, House } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./ModeToggle";
+import Container from "./Container";
 
 const headerData = [
   { text: "Home", path: "/", refKey: "homeRef", icon: <House size={20} /> },
@@ -65,9 +66,9 @@ export function Header({ sectionRefs }: { sectionRefs: SectionRefs }) {
   };
 
   return (
-    <div className="relative z-50 h-[60px] py-2">
+    <Container className="relative z-50 h-[60px] py-2">
       <nav
-        className={`fixed left-0 right-0 flex items-center justify-between bg-gradient-to-b from-[#0a0a0a] to-[#00000] px-[20px] backdrop-blur-sm`}
+        className={`fixed left-0 right-0 flex items-center justify-between bg-gradient-to-b from-[#0a0a0a] to-[#00000] px-[20px] backdrop-blur-sm md:px-[50px] lg:px-[80px] xl:px-[140px]`}
       >
         <Link href="/" className="text-[32px] font-bold text-white">
           K
@@ -88,6 +89,6 @@ export function Header({ sectionRefs }: { sectionRefs: SectionRefs }) {
         </div>
         <ModeToggle />
       </nav>
-    </div>
+    </Container>
   );
 }
