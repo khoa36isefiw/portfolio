@@ -3,6 +3,7 @@ import Contact from "@/components/Contact";
 import Container from "@/components/Container";
 
 import Experiences from "@/components/Experience";
+import { Header } from "@/components/Header";
 import HeadingH1 from "@/components/HeadingH1";
 import Projects from "@/components/Projects";
 import { Button } from "@/components/ui/button";
@@ -10,16 +11,30 @@ import { skils } from "@/data/skillsData";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
 import Image from "next/image";
+import { useRef } from "react";
 import { toast } from "sonner";
 
 // Home Page ("/")
 export default function Home() {
+  const homeRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+
+  const sectionRefs = {
+    homeRef,
+    aboutRef,
+    skillsRef,
+    projectsRef,
+  };
   const handleContact = () => {
     toast.success("Email was sent.");
   };
   return (
     <div>
+      <Header sectionRefs={sectionRefs} />
       <motion.div
+        ref={homeRef}
         variants={{
           hidden: {
             opacity: 0,
@@ -60,7 +75,7 @@ export default function Home() {
           <Mail />
         </div>
       </motion.div>
-      <Container className="bg-[#191919] py-8">
+      <Container ref={aboutRef} className="bg-[#191919] py-8">
         <HeadingH1 text={"About"} />
 
         <div className="mb-2 h-[2px] w-[100px] rounded-sm bg-primary-color" />
@@ -83,7 +98,7 @@ export default function Home() {
       </Container>
 
       {/* My Skills */}
-      <Container className="mt-8">
+      <Container ref={skillsRef} className="mt-8">
         <HeadingH1 text={"My Skills"} className="text-center" />
         <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {skils.map((skill, index) => (
@@ -117,7 +132,7 @@ export default function Home() {
         </div>
       </Container>
       <Experiences />
-      <Projects />
+      <Projects ref={projectsRef} />
       <Contact />
     </div>
   );
