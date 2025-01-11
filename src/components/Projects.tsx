@@ -11,7 +11,7 @@ import { Eye } from "lucide-react";
 function Projects({ ref }: { ref: React.Ref<HTMLDivElement> }) {
   const router = useRouter();
   const handleNavigateToDetail = (projectId: number) => {
-    router.push(`/projects/${projectId}`); // navigate to project detail page
+    router.push(`/projects/${projectId}`);
   };
 
   return (

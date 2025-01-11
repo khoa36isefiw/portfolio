@@ -11,10 +11,10 @@ import React, { useState } from "react";
 
 function ProjectDetail() {
   const { pId } = useParams<{ pId: string | undefined }>();
-  const rId = pId ? parseInt(pId, 10) : NaN; // Convert string to number
+  const rId = pId ? parseInt(pId, 10) : ""; // Convert string to number
   const [imageIndexSelected, setImageIndexSelected] = useState<number>(0);
 
-  if (isNaN(rId)) {
+  if (rId) {
     return <div>Invalid Project ID</div>; // Handle invalid or undefined ID
   }
 
