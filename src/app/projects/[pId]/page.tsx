@@ -11,8 +11,8 @@ import React, { useState } from "react";
 
 function ProjectDetail() {
   const { pId } = useParams<{ pId: string | undefined }>();
-  const rId = pId && parseInt(pId, 10); // Convert string to number
-  console.log("type of rId: ", typeof rId);
+  const rId = pId ? parseInt(pId, 10) : ""; // Convert string to number
+
   const [imageIndexSelected, setImageIndexSelected] = useState<number>(0);
 
   if (!rId) {
