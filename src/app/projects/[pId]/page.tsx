@@ -6,7 +6,6 @@ import { IProjectsData, projectsData } from "@/data/projectsData";
 import { ChevronLeft, ChevronRight, Code, Paperclip } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-
 import React, { useState } from "react";
 
 function ProjectDetail() {
