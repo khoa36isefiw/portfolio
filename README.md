@@ -37,3 +37,7 @@
   - Bundle size: Giảm JS bundle size vì client không cần tải về phần js logic để render HTML
   - Load trang lần đầu nhanh và chỉ số FCP (First Contentful Paint) thấp do người dùng sẽ thấy content ngay lập tức
   - SEO and SES (Social Network Sharebility)
+
+### front-end connect web3 như thế nào?
+
+- 2 - 3 ngày research web3 (thứ 4 report phần web3 bên phía front-end call api thôi, không có viết code blockchain)
