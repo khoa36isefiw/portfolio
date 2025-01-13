@@ -2,8 +2,8 @@
 import { BookMarked, CircleUserRound, FolderGit, House } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ModeToggle } from "./ModeToggle";
 import Container from "./Container";
+import RealTimeClock from "./RealTimeClock";
 
 const headerData = [
   { text: "Home", path: "/", refKey: "homeRef", icon: <House size={20} /> },
@@ -87,7 +87,8 @@ export function Header({ sectionRefs }: { sectionRefs: SectionRefs }) {
             </button>
           ))}
         </div>
-        <ModeToggle />
+
+        <RealTimeClock />
       </nav>
     </Container>
   );

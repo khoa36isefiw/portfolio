@@ -25,7 +25,7 @@ function Projects({ ref }: { ref: React.Ref<HTMLDivElement> }) {
             // for event right click
             href={`/projects/${project.projectId}`}
             key={project.projectId}
-            className="boder-[#ccc] group relative aspect-square w-full overflow-hidden rounded-lg border shadow-[0_1px_4px_#fff] hover:cursor-pointer"
+            className="boder-[#d1d1d1] group relative aspect-square w-full overflow-hidden rounded-lg border hover:cursor-pointer"
             onClick={(e) => {
               e.preventDefault();
               handleNavigateToDetail(project.projectId);
