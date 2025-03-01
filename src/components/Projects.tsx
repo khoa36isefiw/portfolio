@@ -7,8 +7,14 @@ import { projectsData } from "@/data/projectsData";
 
 import Image from "next/image";
 import { Eye } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 function Projects({ ref }: { ref: React.Ref<HTMLDivElement> }) {
+  const router = useRouter();
+
+  const handleNavigateToDetail = (projectId: number) => {
+    router.push(`/projects/${projectId}`);
+  };
   return (
     <Container ref={ref} className="my-4">
       <Dots className="w-[100px] gap-20" />
