@@ -95,15 +95,17 @@ function ProjectDetail() {
             />
             <ProjectInfo title="Description" content={data?.desc} />
             <div>
-              {data?.responsibilities.length > 0 && (
+              {data?.responsibilities && data?.responsibilities.length > 0 && (
                 <ProjectInfo title="Responsibilities" />
               )}
               <ul className="list-disc text-[18px]">
-                {data?.responsibilities.map((r, index) => (
-                  <li key={index} className="ml-4">
-                    {r}
-                  </li>
-                ))}
+                {data?.responsibilities &&
+                  data?.responsibilities.length > 0 &&
+                  data?.responsibilities.map((r, index) => (
+                    <li key={index} className="ml-4">
+                      {r}
+                    </li>
+                  ))}
               </ul>
             </div>
 
