@@ -39,7 +39,7 @@ function ProjectDetail() {
 
   return (
     <div>
-      <Header />
+      <Header sectionRefs={null} />
       <Container className="mt-4">
         <HeadingH1
           text={data?.projectName || "Project Not Found"}
@@ -48,6 +48,7 @@ function ProjectDetail() {
         <div className="flex flex-col items-center">
           <div className="mb-2 h-[400px] w-[800px]">
             <Image
+              alt={"Projects Image"}
               src={images[imageIndexSelected]}
               quality={100}
               width={800}
