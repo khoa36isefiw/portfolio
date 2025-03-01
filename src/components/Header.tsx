@@ -45,7 +45,7 @@ export type SectionRefs = {
   [key: string]: React.RefObject<HTMLDivElement | null>;
 };
 
-export function Header({ sectionRefs }: { sectionRefs?: SectionRefs }) {
+export function Header({ sectionRefs }: { sectionRefs: SectionRefs }) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 

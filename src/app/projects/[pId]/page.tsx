@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight, Code, Paperclip } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useState } from "react";
-import { Header } from "@/components/Header";
+import { HeaderNormal } from "@/components/HeaderNormal";
 function ProjectDetail() {
   const { pId } = useParams<{ pId: string | undefined }>();
   const rId = pId ? parseInt(pId, 10) : ""; // Convert string to number
@@ -39,7 +39,7 @@ function ProjectDetail() {
 
   return (
     <div>
-      <Header sectionRefs={null} />
+      <HeaderNormal />
       <Container className="mt-4">
         <HeadingH1
           text={data?.projectName || "Project Not Found"}
@@ -95,7 +95,7 @@ function ProjectDetail() {
             />
             <ProjectInfo title="Description" content={data?.desc} />
             <div>
-              {data?.responsibilities?.length > 0 && (
+              {data?.responsibilities.length > 0 && (
                 <ProjectInfo title="Responsibilities" />
               )}
               <ul className="list-disc text-[18px]">
