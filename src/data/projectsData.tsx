@@ -128,33 +128,7 @@ export const projectsData: IProjectsData[] = [
     ],
     technologies: ["Javascript", "ReactJS", "Material-UI", "Redux Toolkit."],
   },
-  {
-    projectId: 5,
-    projectType: "mobile",
-    projectName: "Travel Application",
-    projectImage: [
-      "/images/e1.png",
-      "/images/e2.png",
-      "/images/e3.png",
-      "/images/e4.png",
-      "/images/e5.png",
-      "/images/e6.png",
-      "/images/e7.png",
-      "/images/e8.png",
-    ],
-    desc: "Developing a simple travel application UI in React Native with expo router for navigating between different screens of the app.",
 
-    timeStart: "Sep, 2024",
-    timeEnd: "Sep, 2024",
-    linkDeployed: "",
-    nameLinkDeployed: "",
-    linkSourceCode: "https://github.com/khoa36isefiw/travel-app",
-    responsibilities: [
-      "Implementing some User Interfaces: Travel App Home Screen, World popular places list, Travel Groups and Popular places details.",
-      "Researching and using animations.",
-    ],
-    technologies: ["Typescript", "React Native."],
-  },
   {
     projectId: 6,
     projectType: "website",
@@ -180,8 +154,8 @@ export const projectsData: IProjectsData[] = [
     projectImage: [
       "/images/pn5.png",
       "/images/pn4.png",
+      "/images/pn9.png",
 
-      "/images/pn2.png",
       "/images/pn1.png",
     ],
     desc: "Design portfolio website to introduce myself.",
@@ -191,11 +165,8 @@ export const projectsData: IProjectsData[] = [
     linkDeployed: "https://khoa-portfolio-kappa.vercel.app/en",
     nameLinkDeployed: "my-portfolio",
     linkSourceCode: "https://github.com/khoa36isefiw/my-portfolio",
-    responsibilities: [
-      "Implementing some User Interfaces: Travel App Home Screen, World popular places list, Travel Groups and Popular places details.",
-      "Researching and using animations.",
-    ],
-    technologies: ["Javascript", "ReactJS", "Material-UI."],
+    responsibilities: [],
+    technologies: ["Typescript", "NextJS", "TailwindCSS", "ShadCN."],
   },
 ];
 

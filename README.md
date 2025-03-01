@@ -38,6 +38,45 @@
   - Load trang lần đầu nhanh và chỉ số FCP (First Contentful Paint) thấp do người dùng sẽ thấy content ngay lập tức
   - SEO and SES (Social Network Sharebility)
 
-### front-end connect web3 như thế nào?
+### Kiến trúc MYSQL
 
-- 2 - 3 ngày research web3 (thứ 4 report phần web3 bên phía front-end call api thôi, không có viết code blockchain)
+### Lấy dữ liệu trong table
+
+#### Lấy dữ liệu
+
+--> Select
+
+#### Lọc dữ liệu
+
+--> Where
+
+#### Sắp xếp dữ liệu
+
+--> Order by
+
+#### Biển đổi dữ liệu
+
+--> Sử dụng các hàm
+
+#### Gom nhóm dữ liệu
+
+--> Sử dụng Group by
+
+#### Lấy dữ liệu từ nhiều bảng
+
+--> Join
+
+### Thêm dữ liệu vào bảng
+
+#### Insert
+
+- thêm 1 bảng dữ liệu mới insert into values (1, "test")
+- thêm dữ liệu từ bảng khác insert into test select \* from test;
+
+### Cập nhật dữ liệu
+
+- Update
+
+### Xoá dữ liệu
+
+- Delete

@@ -25,6 +25,7 @@ export const experiences: IExperience[] = [
     company: "Tâm Luxury",
     description: "Develop interfaces for internal company systems.",
     responsibilities: [
+      "Worked part-time as a Front-end developer.",
       "Worked and developed user interfaces provided from the design team.",
       "Developed interfaces for payroll accounting, attendance calculation, jewelry inspection.",
       "Developed employee salary viewing interface, sales revenue statistics.",

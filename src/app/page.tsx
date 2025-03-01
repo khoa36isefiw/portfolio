@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
-import { toast } from "sonner";
+
 
 // Home Page ("/")
 export default function Home() {
@@ -21,6 +21,7 @@ export default function Home() {
   const skillsRef = useRef<HTMLDivElement>(null);
   const expRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const sectionRefs = {
     homeRef,
@@ -28,10 +29,15 @@ export default function Home() {
     skillsRef,
     expRef,
     projectsRef,
+    contactRef,
   };
+
   const handleContact = () => {
-    toast.success("Email was sent.");
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" }); // 👈 Cuộn xuống mượt
+    }
   };
+
   return (
     <div>
       <Header sectionRefs={sectionRefs} />
@@ -137,7 +143,9 @@ export default function Home() {
         <Experiences />
       </div>
       <Projects ref={projectsRef} />
-      <Contact />
+      <div ref={contactRef}>
+        <Contact />
+      </div>
     </div>
   );
 }
