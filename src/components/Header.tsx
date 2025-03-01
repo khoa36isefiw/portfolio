@@ -1,5 +1,11 @@
 "use client";
-import { BookMarked, CircleUserRound, FolderGit, House } from "lucide-react";
+import {
+  BookMarked,
+  BriefcaseBusiness,
+  CircleUserRound,
+  FolderGit,
+  House,
+} from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Container from "./Container";
@@ -18,6 +24,13 @@ const headerData = [
     path: "/skills",
     refKey: "skillsRef",
     icon: <BookMarked size={20} />,
+  },
+  {
+    text: "Experiences",
+    path: "/experiences",
+    refKey: "expRef",
+
+    icon: <BriefcaseBusiness size={20} />,
   },
   {
     text: "Projects",

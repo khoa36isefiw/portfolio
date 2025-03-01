@@ -19,12 +19,14 @@ export default function Home() {
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
+  const expRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
   const sectionRefs = {
     homeRef,
     aboutRef,
     skillsRef,
+    expRef,
     projectsRef,
   };
   const handleContact = () => {
@@ -131,7 +133,9 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Experiences />
+      <div ref={expRef}>
+        <Experiences />
+      </div>
       <Projects ref={projectsRef} />
       <Contact />
     </div>
