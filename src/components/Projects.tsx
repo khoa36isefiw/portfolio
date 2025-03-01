@@ -11,9 +11,9 @@ import { Eye } from "lucide-react";
 function Projects({ ref }: { ref: React.Ref<HTMLDivElement> }) {
   const router = useRouter();
 
-  const handleNavigateToDetail = (projectId: number) => {
-    router.push(`/projects/${projectId}`);
-  };
+  // const handleNavigateToDetail = (projectId: number) => {
+  //   router.push(`/projects/${projectId}`);
+  // };
 
   return (
     <Container ref={ref} className="my-4">
@@ -26,10 +26,11 @@ function Projects({ ref }: { ref: React.Ref<HTMLDivElement> }) {
             href={`/projects/${project.projectId}`}
             key={project.projectId}
             className="boder-[#d1d1d1] group relative aspect-square w-full overflow-hidden rounded-lg border hover:cursor-pointer"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavigateToDetail(project.projectId);
-            }}
+            // onClick={(e) => {
+            //   e.preventDefault();
+            //   handleNavigateToDetail(project.projectId);
+            // }}
+            target="__blank"
           >
             <Image
               src={project.projectImage[0]}

@@ -87,7 +87,7 @@ function ProjectDetail() {
             </button>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-start justify-center">
           <div className="mt-4">
             <ProjectInfo
               title="Time"
