@@ -4,17 +4,11 @@ import Container from "./Container";
 import HeadingH1 from "./HeadingH1";
 
 import { projectsData } from "@/data/projectsData";
-import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 import { Eye } from "lucide-react";
 
 function Projects({ ref }: { ref: React.Ref<HTMLDivElement> }) {
-  const router = useRouter();
-
-  // const handleNavigateToDetail = (projectId: number) => {
-  //   router.push(`/projects/${projectId}`);
-  // };
-
   return (
     <Container ref={ref} className="my-4">
       <Dots className="w-[100px] gap-20" />
