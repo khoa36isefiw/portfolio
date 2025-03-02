@@ -2,7 +2,7 @@
 import React, { JSX, useRef, useState } from "react";
 import Container from "./Container";
 import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import axios from "axios";
 
