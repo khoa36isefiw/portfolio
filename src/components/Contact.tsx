@@ -4,6 +4,7 @@ import Container from "./Container";
 import { Github, Linkedin, Mail, PhoneCall } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
+import axios from "axios";
 
 type ContactInfor = {
   text: string;
@@ -46,42 +47,68 @@ function Contact() {
     }));
   };
 
-  const sendEmail = (e: React.FormEvent) => {
+  // const sendEmail = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!form.current) {
+  //     // check null
+
+  //     console.error("Form reference is null");
+  //     return;
+  //   }
+
+  //   if (!formValues.from_name || !formValues.to_name || !formValues.message) {
+  //     toast.warning("Please fill all these fields.");
+  //   } else {
+  //     emailjs
+  //       .sendForm(
+  //         "service_akwt4h9",
+  //         "template_8u12tgt",
+  //         form.current,
+  //         "EIpxo4Zin4OTgUwwK",
+  //       )
+  //       .then(
+  //         (result) => {
+  //           console.log("result", result);
+  //           // reset form
+  //           // Clear form values after successful submission
+  //           setFormValues({
+  //             to_name: "",
+  //             from_name: "",
+  //             message: "",
+  //           });
+  //           toast.success("Email was sent.");
+  //         },
+  //         (error) => {
+  //           console.log(error.text);
+  //           toast.error("Something went wrong");
+  //         },
+  //       );
+  //   }
+  // };
+
+  const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.current) {
-      // check null
-
-      console.error("Form reference is null");
-      return;
-    }
-
     if (!formValues.from_name || !formValues.to_name || !formValues.message) {
       toast.warning("Please fill all these fields.");
+      return;
     } else {
-      emailjs
-        .sendForm(
-          "service_akwt4h9",
-          "template_8u12tgt",
-          form.current,
-          "EIpxo4Zin4OTgUwwK",
-        )
-        .then(
-          (result) => {
-            console.log("result", result);
-            // reset form
-            // Clear form values after successful submission
-            setFormValues({
-              to_name: "",
-              from_name: "",
-              message: "",
-            });
-            toast.success("Email was sent.");
+      console.log(formValues);
+      const mailResponse = await axios.post(
+        "https://send-mail-api-6rw0.onrender.com/send-mail",
+        {
+          name: formValues.from_name,
+          email: formValues.to_name,
+          message: formValues.message,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
           },
-          (error) => {
-            console.log(error.text);
-            toast.error("Something went wrong");
-          },
-        );
+        },
+      );
+      if (mailResponse.status === 200) {
+        toast.success("Email was sent, please wait for a reply!");
+      }
     }
   };
   return (
